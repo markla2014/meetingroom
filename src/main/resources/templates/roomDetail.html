@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background.css">
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/roomDetail.js"></script>
+    <title>会议室详情</title>
+
+    <style>
+        .card{
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<div class="container bg-light p-4" style="min-height: 100vh" id="content">
+    <a href="/MeetingRoom/index.jsp" style="color: black">
+        <img class="mb-1" src="img/return.svg" style="width: 2.5vh;">
+        <span>返回首页</span>
+    </a>
+    <div class="card shadow-lg text-center mt-3 mx-auto col-6">
+        <img class="card-img-top" id="img" src="img/noImg.png" style="border-radius: 25px">
+    </div>
+    <div class="card shadow-lg col-10 mt-3 mx-auto">
+        <div class="flex-row">
+            <span class="font-weight-bolder">会议室ID：&emsp;&emsp;</span>
+            <span id="rid"></span>
+        </div>
+        <div class="flex-row">
+            <span class="font-weight-bolder">会议室编号：&emsp;</span>
+            <span id="rNum"></span>
+        </div>
+        <div class="flex-row">
+            <span class="font-weight-bolder">会议室名称：&emsp;</span>
+            <span id="rName"></span>
+        </div>
+        <div class="flex-row">
+            <span class="font-weight-bolder">会议室地址：&emsp;</span>
+            <span id="rPlace"></span>
+        </div>
+        <div class="flex-row">
+            <span class="font-weight-bolder">会议室容量：&emsp;</span>
+            <span id="cap"></span>
+        </div>
+    </div>
+    <div class="card shadow-lg col-10 mt-3 mx-auto flex-row">
+        <span class="font-weight-bolder">会议室介绍：&emsp;</span>
+        <span id="intro"></span>
+    </div>
+
+
+</div>
+
+</body>
+</html>

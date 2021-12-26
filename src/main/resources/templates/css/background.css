@@ -1,0 +1,7 @@
+#canvas{
+    z-index: -1;
+    position : absolute;
+    display: block;
+    background: #000;
+    margin: 0 auto;
+}

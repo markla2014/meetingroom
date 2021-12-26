@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/background.js"></script>
+    <title>会议室申请系统用户注册</title>
+</head>
+<body>
+<!--背景-->
+<canvas id="canvas"></canvas>
+
+
+    <form method="post" action="/MeetingRoom/UserServlet/addUser" class="shadow-lg">
+        <div class="form-group">
+            <label for="username">姓名：</label>
+            <input type="text" class="form-control" id="username" name="username" autocomplete="off" placeholder="1-20个字符组成">
+            <label for="username" class="invalid-feedback" id="usernameTip"></label>
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" class="form-control" id="password" name="password" autocomplete="off" placeholder="6-16位数字&字母&符号组成">
+            <label for="password" class="invalid-feedback" id="passwordTip"></label>
+        </div>
+        <div class="form-group">
+            <label for="passwordCheck">确认密码：</label>
+            <input type="password" class="form-control" id="passwordCheck" name="passwordCheck" autocomplete="off" placeholder="确认密码">
+            <label for="passwordCheck" class="invalid-feedback" id="passwordCheckTip"></label>
+        </div>
+        <div class="form-group">
+            <label for="telephone">手机号码：</label>
+            <input type="text" class="form-control" id="telephone" name="telephone" autocomplete="off" placeholder="请输入您的手机号码">
+            <label for="telephone" class="invalid-feedback" id="telephoneTip"></label>
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱：</label>
+            <input type="text" class="form-control" id="email" name="email" autocomplete="off" placeholder="请输入您的邮箱">
+            <label for="email" class="invalid-feedback" id="emailTip"></label>
+        </div>
+        <br>
+        <img src="/MeetingRoom/UtilServlet/checkImg" id="codeImg">
+        <br class="d-none d-md-block">
+        <label for="checkCode">验证码：</label>
+        <div id="ccd">
+            <input type="text" class="form-control" id="checkCode" name="checkCode" autocomplete="off">
+            <label for="checkCode" class="invalid-feedback" id="checkCodeTip"></label>
+        </div>
+        <br>
+        <br>
+        <input type="button" id="submit" class="btn btn-primary btn-lg btn-block" value="提交">
+    </form>
+
+    <!-- 表单提交失败提示框 -->
+    <div class="modal fade" id="formTip">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title" id="formTip_title"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- 主体 -->
+                <div class="modal-body" id="formTip_body">
+                </div>
+
+                <!-- 底部 -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

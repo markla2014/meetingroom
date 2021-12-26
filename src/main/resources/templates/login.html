@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/login.js"></script>
+    <title>登录会议室申请系统</title>
+</head>
+<body>
+<!--背景-->
+<canvas id="canvas"></canvas>
+
+<div id="fc" class="shadow-lg">
+    <ul class="nav nav-tabs d-flex" role="tablist">
+        <li class="nav-item flex-fill"><a class="nav-link active" data-toggle="tab" href="#user">用户登录</a></li>
+        <li class="nav-item flex-fill"><a class="nav-link" data-toggle="tab" href="#admin">管理员登录</a></li>
+    </ul>
+    <form method="post" action="/MeetingRoom/UserServlet/">
+    <div class="tab-content">
+        <div id="user" class="container tab-pane active">
+            <div class="form-group">
+                <label for="username">用户名：</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="用户名为手机或邮箱">
+                <label for="username" class="invalid-feedback usernameTip"></label>
+            </div>
+            <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="输入密码">
+                <label for="password" class="invalid-feedback passwordTip"></label>
+            </div>
+            <label for="checkCodeU">验证码：</label>
+            <img src="/MeetingRoom/UtilServlet/checkImg" class="codeImg" id="codeImgU">
+            <div class="ccd">
+                <input type="text" class="form-control" id="checkCodeU" name="checkCode" autocomplete="off">
+                <label for="checkCodeU" class="invalid-feedback" id="checkCodeTipU"></label>
+            </div>
+        </div>
+        <div id="admin" class="container tab-pane fade">
+            <div class="form-group">
+                <label for="adminname">工号：</label>
+                <input type="text" class="form-control" id="adminname" name="username" placeholder="输入工号">
+                <label for="adminname" class="invalid-feedback usernameTip"></label>
+            </div>
+            <div class="form-group">
+                <label for="adminpassword">密码：</label>
+                <input type="password" class="form-control" id="adminpassword" name="password" placeholder="输入密码">
+                <label for="adminpassword" class="invalid-feedback passwordTip"></label>
+            </div>
+            <label for="checkCodeA">验证码：</label>
+            <img src="/MeetingRoom/UtilServlet/checkImg" class="codeImg" id="codeImgA">
+            <div class="ccd">
+                <input type="text" class="form-control" id="checkCodeA" name="checkCode" autocomplete="off">
+                <label for="checkCodeA" class="invalid-feedback" id="checkCodeTipA"></label>
+            </div>
+        </div>
+        <br>
+        <br>
+        <input type="button" id="submit" class="btn btn-primary btn-lg btn-block" value="登录">
+    </div>
+    </form>
+</div>
+
+<!-- 表单提交失败提示框 -->
+<div class="modal fade" id="formTip">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- 头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title" id="formTip_title"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 主体 -->
+            <div class="modal-body" id="formTip_body">
+            </div>
+
+            <!-- 底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">确定</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/UserList.js"></script>
+</head>
+<body>
+<nav class="bg-light navbar-light shadow-sm card mt-5 ml-5 mr-5" style="border-radius: 25rem">
+    <ul class="nav p-2 pl-4 pr-4">
+        <li class="nav-item pt-2"><h6 class="font-weight-bold">筛选：</h6></li>
+        <li class="nav-item mr-3"><input id="uId" class="form-control" type="text" placeholder="用户ID"></li>
+        <li class="nav-item mr-3"><input id="uName" class="form-control" type="text" placeholder="用户姓名"></li>
+        <li class="nav-item mr-3"><input id="phone" class="form-control" type="text" placeholder="手机号码"></li>
+        <li class="nav-item mr-3"><input id="email" class="form-control" type="text" placeholder="邮箱"></li>
+        <li class="nav-item flex-grow-1"><a class="btn btn-info float-right" id="seBtn">确认</a></li>
+    </ul>
+</nav>
+
+<div class="container border-right border-left border-bottom mb-5">
+    <table class="table table-hover">
+        <thead>
+        <tr class="row table-secondary">
+            <th class="col-2">用户ID</th>
+            <th class="col-2">用户姓名</th>
+            <th class="col-2">手机号</th>
+            <th class="col-2">邮箱</th>
+            <th class="col-2">注册时间</th>
+            <th class="col-2 text-center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="altTip">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- 模态框头部 -->
+                <div class="modal-header">
+                    <h4 class="modal-title">修改用户信息</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <form method="post" action="/MeetingRoom/UserServlet/alterUser">
+                    <!-- 模态框主体 -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username">姓名：</label>
+                            <input type="text" class="form-control" id="username" name="username" autocomplete="off" placeholder="1-20个字符组成">
+                            <label for="username" class="invalid-feedback" id="usernameTip"></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="altphone">手机号码：</label>
+                            <input type="text" class="form-control" id="altphone" name="phone" autocomplete="off" placeholder="用户手机号码">
+                            <label for="altphone" class="invalid-feedback" id="telephoneTip"></label>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">邮箱：</label>
+                            <input type="text" class="form-control" id="altemail" name="email" autocomplete="off" placeholder="用户邮箱">
+                            <label for="email" class="invalid-feedback" id="emailTip"></label>
+                        </div>
+                    </div>
+
+                    <!-- 模态框底部 -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" data-dismiss="modal">确认</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.card{
+    border-radius: 35px;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 1vw;
+}
+span{
+    color: gray;
+}
+.form-inline{
+    margin-top: 2%;
+}
+.nav-link:hover span{
+    color: #007bff;
+}
+.nav-content>a,.nav-title>a{
+    display: block;
+}

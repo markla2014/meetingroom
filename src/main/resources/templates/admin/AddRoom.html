@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="js/AddRoom.js"></script>
+
+    <style>
+        .form-inline{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card shadow-lg mt-3" style="border-radius: 45px">
+        <div class="card-body p-5">
+            <iframe name="ifr" id="ifr" frameborder="0" height="0" width="0"></iframe>
+            <form id="imgForm" method="post" target="ifr" action="/MeetingRoom/UtilServlet/uploadRoomImg" enctype="multipart/form-data">
+                <div class="form-inline input-group">
+                    <label for="imgUp" class="font-weight-bold">会议室图片：&emsp;&emsp;&emsp;</label>
+                    <div class="custom-file form-control" style="border-bottom-left-radius: 25rem;border-top-left-radius: 25rem">
+                        <span style="height: 20px;position: absolute;" id="imgShow" class="font-weight-lighter">点击右侧按钮上传文件</span>
+                        <input type="file" id="imgUp" name="imgUrl" class="custom-file-input">
+                    </div>
+                    <div class="input-group-append">
+                        <button type="submit" class="input-group-text btn" id="imgBtn" style="border-bottom-right-radius: 25rem;border-top-right-radius: 25rem" href="#">
+                            <img src="../img/noImg.png" style="height: 24px; border: none">
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <form method="post" id="texForm" target="ifr" action="/MeetingRoom/RoomServlet/addRoom">
+                <div class="form-inline input-group">
+                    <label for="roomNum" class="font-weight-bold">会议室编号：&emsp;&emsp;&emsp;</label>
+                    <input class="form-control" id="roomNum" name="roomNum" autocomplete="off" placeholder="会议室名称拼音首字母加房间号" style="border-radius: 25rem">
+                </div>
+                <div class="form-inline input-group">
+                    <label for="roomName" class="font-weight-bold">会议室名称：&emsp;&emsp;&emsp;</label>
+                    <input class="form-control" placeholder="输入会议室名称" id="roomName" name="roomName" autocomplete="off" style="border-radius: 25rem">
+                </div>
+                <div class="form-inline input-group">
+                    <label for="roomPlace" class="font-weight-bold">会议室地址：&emsp;&emsp;&emsp;</label>
+                    <input class="form-control" placeholder="输入会议室地址" id="roomPlace" name="roomPlace" autocomplete="off" style="border-radius: 25rem">
+                </div>
+                <div class="form-inline input-group">
+                    <label for="roomCapacity" class="font-weight-bold">会议室容量：&emsp;&emsp;&emsp;</label>
+                    <input class="form-control" placeholder="输入会议室容量" id="roomCapacity" name="roomCapacity" autocomplete="off" style="border-radius: 25rem">
+                </div>
+                <div class="form-inline input-group">
+                    <label for="roomIntroduction" class="font-weight-bold">会议室介绍：&emsp;&emsp;&emsp;</label>
+                    <textarea rows="6" placeholder="最大100字符" class="form-control" id="roomIntroduction" name="roomIntroduction" autocomplete="off" style="border-radius: 25px"></textarea>
+                </div>
+                <div class="col-8 mx-auto">
+                    <input type="submit" class="btn btn-primary btn-block mt-3" id="sub">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
